@@ -177,6 +177,19 @@ public class MainActivity extends AppCompatActivity {
         ope=4;tvh=true;
         tv1.setText("÷");                   //÷
     }
+    public void btCancel(View view){                //初期に戻す
+        result = 0;//結果
+        tvh=false;//tv0かtv2の判定に使う
+
+       a=0; b=0;//入力
+        ope=0;//初期0、＋が１、－が２、×が３、÷が４
+        tv0.setText(String.valueOf(a));             //tv0に0を入れた。
+        tv1.setText("");
+        tv2.setText("");
+        tv3.setText("");
+        tv4.setText("");
+
+    }
 
 }
 
