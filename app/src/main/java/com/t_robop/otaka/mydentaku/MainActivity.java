@@ -8,9 +8,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int number = 0;//初期値
+
     int result = 0;//結果
     boolean tvh;//tv0かtv2の判定に使う
+                //boolean関数:True Falseの二択の時に使う。初期はfalse
     int a, b;//入力
 
     int ope=0;//初期0、＋が１、－が２、×が３、÷が４
@@ -24,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tv0 = (TextView) findViewById(R.id.textView0);
         tv1 = (TextView) findViewById(R.id.textView1);
-        tv2 = (TextView) findViewById(R.id.textView2);
+        tv2 = (TextView) findViewById(R.id.textView2);      //関連づけ
         tv3 = (TextView) findViewById(R.id.textView3);
+        tv4 = (TextView) findViewById(R.id.textView4);
 
     }
 
@@ -45,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
     public void button1(View view) {
        int num1=1;
         if(tvh==false){
-        a=num1+a*10;
+        a=num1+a*10;                //連続に表示させるため10倍
         tv0.setText(String.valueOf(a));}else {
                 b=num1+b*10;
-                tv2.setText(String.valueOf(b));
+                tv2.setText(String.valueOf(b));     //bの値をtv2に入れた
             }
         }
 
@@ -139,28 +141,41 @@ public class MainActivity extends AppCompatActivity {
     public void buttonEq(View view){
 
         tv3.setText("=");
+       if(ope==1) {             //＋の場合
+           result=a+b;
+           tv4.setText(String.valueOf(result));
+       }else if(ope==2){            //－の場合
+           result=a-b;
+           tv4.setText(String.valueOf(result));
+       }else if(ope==3){                   //×の場合
+           result=a*b;
+           tv4.setText(String.valueOf(result));
+       }else if(ope==4){                        //÷の場合
+           result=a/b;
+           tv4.setText(String.valueOf(result));
+       }
 
     }
 
     public void buttonKa(View view) {
     ope=3;tvh=true;
-        tv1.setText("×");
+        tv1.setText("×");           //×
     }
 
     public void buttonPi(View view) {
     ope=1;tvh=true;
-        tv1.setText("+");
+        tv1.setText("+");                   //＋
 
     }
 
     public void buttonMi(View view) {
     ope=2;tvh=true;
-        tv1.setText("-");
+        tv1.setText("-");               //－
     }
 
     public void buttonWa(View view) {
         ope=4;tvh=true;
-        tv1.setText("÷");
+        tv1.setText("÷");                   //÷
     }
 
 }
