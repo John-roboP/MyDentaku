@@ -3,7 +3,6 @@ package com.t_robop.otaka.mydentaku;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,7 +10,8 @@ public class MainActivity extends AppCompatActivity {
 
     int result = 0;//結果
     boolean tvh;//tv0かtv2の判定に使う
-    boolean Eqend;//イコール判定
+    boolean Eqeualend;//イコール判定
+    boolean fend;//符号押したかどうかの判定
                 //boolean関数:True Falseの二択の時に使う。初期はfalse
     int a, b;//入力
 
@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         a=num0+a*10;                     //連続に表示させるため10倍
         tv0.setText(String.valueOf(a));}
         else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num0 + b * 10;
                 tv2.setText(String.valueOf(b));         //bの値をtv2に入れた
             }//bの値をtv2に入れた
@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
         a=num1+a*10;
         tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num1 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num2+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num2 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num3+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num3 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num4+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num4 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num5+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num5 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num6+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num6 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -137,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num7+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend=true;
+            if(Eqeualend ==false) {
+                Eqeualend =true;
                 b = num7 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num8+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num8 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -163,8 +163,8 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num9+a*10;
             tv0.setText(String.valueOf(a));}else {
-            if(Eqend==false) {
-                Eqend = true;
+            if(Eqeualend ==false) {
+                Eqeualend = true;
                 b = num9 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -191,30 +191,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonKa(View view) {
-    ope=3;tvh=true;
-        tv1.setText("×");           //×
+        if(fend==false) {           //判定
+            fend=true;
+            ope = 3;
+            tvh = true;
+            tv1.setText("×");//×
+        }
+
     }
 
     public void buttonPi(View view) {
-    ope=1;tvh=true;
-        tv1.setText("+");                   //＋
-
+        if(fend==false) {           //判定
+            fend = true;
+            ope = 1;
+            tvh = true;
+            tv1.setText("+");                   //＋
+        }
     }
 
     public void buttonMi(View view) {
-    ope=2;tvh=true;
-        tv1.setText("-");               //－
+        if(fend==false) {           //判定
+            fend = true;
+            ope = 2;
+            tvh = true;
+            tv1.setText("-");               //－
+        }
     }
 
     public void buttonWa(View view) {
-        ope=4;tvh=true;
-        tv1.setText("÷");                   //÷
+        if(fend==false) {           //判定
+            fend = true;
+            ope = 4;
+            tvh = true;
+            tv1.setText("÷");                   //÷
+        }
     }
     public void btCancel(View view){                //初期に戻す
         result = 0;//結果
-        Eqend=false;//イコール押したかどうか。
+        Eqeualend =false;//イコール押したかどうか。
         tvh=false;//tv0かtv2の判定に使う
-
+        fend=false;//符号の初期化
        a=0; b=0;//入力
         ope=0;//初期0、＋が１、－が２、×が３、÷が４
         tv0.setText(String.valueOf(a));             //tv0に0を入れた。
