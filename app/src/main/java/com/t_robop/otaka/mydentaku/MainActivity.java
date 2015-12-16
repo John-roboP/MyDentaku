@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         tv0.setText(String.valueOf(a));}
         else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num0 + b * 10;
                 tv2.setText(String.valueOf(b));         //bの値をtv2に入れた
             }//bの値をtv2に入れた
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         a=num1+a*10;
         tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num1 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             a=num2+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num2 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             a=num3+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num3 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             a=num4+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num4 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             a=num5+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num5 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             a=num6+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num6 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             a=num7+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend =true;
+
                 b = num7 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
             a=num8+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num8 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
@@ -164,15 +164,22 @@ public class MainActivity extends AppCompatActivity {
             a=num9+a*10;
             tv0.setText(String.valueOf(a));}else {
             if(Eqeualend ==false) {
-                Eqeualend = true;
+
                 b = num9 + b * 10;
                 tv2.setText(String.valueOf(b));
             }
         }
     }
 
-    public void buttonEq(View view){            //イコールボタン
-
+    public void buttonEq(View view){//イコールボタン
+        if(b==0&&ope==4){
+            tv0.setText("");
+            tv1.setText("");
+            tv2.setText("");
+            tv3.setText("");
+            tv4.setText(String.valueOf("ERROR"));}            //bが0で÷と落ちるのでERROR
+        else{
+        Eqeualend = true;
         tv3.setText("=");
        if(ope==1) {             //＋の場合
            result=a+b;
@@ -183,9 +190,10 @@ public class MainActivity extends AppCompatActivity {
        }else if(ope==3){                   //×の場合
            result=a*b;
            tv4.setText(String.valueOf(result));
-       }else if(ope==4){                        //÷の場合
-           result=a/b;
+       }else if(ope==4) {                        //÷の場合
+           result = a / b;
            tv4.setText(String.valueOf(result));
+        }
        }
 
     }
