@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     int result = 0;//結果
     boolean tvh;//tv0かtv2の判定に使う
+    boolean Eqend;//イコール判定
                 //boolean関数:True Falseの二択の時に使う。初期はfalse
     int a, b;//入力
 
@@ -22,23 +23,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        tv0 = (TextView) findViewById(R.id.textView0);
-        tv1 = (TextView) findViewById(R.id.textView1);
-        tv2 = (TextView) findViewById(R.id.textView2);      //関連づけ
-        tv3 = (TextView) findViewById(R.id.textView3);
-        tv4 = (TextView) findViewById(R.id.textView4);
+        setContentView(R.layout.activity_main);                 //a+b=c
+        tv0 = (TextView) findViewById(R.id.textView0);                      //a
+        tv1 = (TextView) findViewById(R.id.textView1);              //+-×÷
+        tv2 = (TextView) findViewById(R.id.textView2);      //関連づけ          //b
+        tv3 = (TextView) findViewById(R.id.textView3);                 // =
+        tv4 = (TextView) findViewById(R.id.textView4);                  //c
 
     }
 
     public void button0 (View view){
         int num0=0;
         if(tvh==false){
-        a=num0+a*10;
+        a=num0+a*10;                     //連続に表示させるため10倍
         tv0.setText(String.valueOf(a));}
         else {
-            b=num0+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num0 + b * 10;
+                tv2.setText(String.valueOf(b));         //bの値をtv2に入れた
+            }//bの値をtv2に入れた
+
         }
 
     }
@@ -47,10 +52,13 @@ public class MainActivity extends AppCompatActivity {
     public void button1(View view) {
        int num1=1;
         if(tvh==false){
-        a=num1+a*10;                //連続に表示させるため10倍
+        a=num1+a*10;
         tv0.setText(String.valueOf(a));}else {
-                b=num1+b*10;
-                tv2.setText(String.valueOf(b));     //bの値をtv2に入れた
+            if(Eqend==false) {
+                Eqend = true;
+                b = num1 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
             }
         }
 
@@ -61,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num2+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num2+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num2 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
     }
 
@@ -71,8 +82,11 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num3+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num3+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num3 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
     }
 
@@ -81,8 +95,11 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num4+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num4+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num4 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
 
     }
@@ -92,9 +109,13 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num5+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num5+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num5 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
+
 
     }
 
@@ -103,8 +124,11 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num6+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num6+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num6 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
     }
 
@@ -113,8 +137,11 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num7+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num7+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend=true;
+                b = num7 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
     }
 
@@ -123,8 +150,11 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num8+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num8+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num8 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
     }
 
@@ -133,12 +163,15 @@ public class MainActivity extends AppCompatActivity {
         if(tvh==false){
             a=num9+a*10;
             tv0.setText(String.valueOf(a));}else {
-            b=num9+b*10;
-            tv2.setText(String.valueOf(b));
+            if(Eqend==false) {
+                Eqend = true;
+                b = num9 + b * 10;
+                tv2.setText(String.valueOf(b));
+            }
         }
     }
 
-    public void buttonEq(View view){
+    public void buttonEq(View view){            //イコールボタン
 
         tv3.setText("=");
        if(ope==1) {             //＋の場合
@@ -179,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void btCancel(View view){                //初期に戻す
         result = 0;//結果
+        Eqend=false;//イコール押したかどうか。
         tvh=false;//tv0かtv2の判定に使う
 
        a=0; b=0;//入力
