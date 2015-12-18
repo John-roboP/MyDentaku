@@ -8,16 +8,17 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    int result = 0;//結果
+    int result;//結果
     boolean tvh;//tv0かtv2の判定に使う
     boolean Eqeualend;//イコール判定
     boolean fend;//符号押したかどうかの判定
                 //boolean関数:True Falseの二択の時に使う。初期はfalse
     int a, b;//入力
 
-    int ope=0;//初期0、＋が１、－が２、×が３、÷が４
+    int ope;//初期0、＋が１、－が２、×が３、÷が４
 
-    TextView tv0,tv1,tv2,tv3,tv4;
+    String valueToString;           //文字をStringで取得
+    TextView tv0,tv1,tv2,tv3,tv4,tv5;
 
 
     @Override
@@ -28,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         tv1 = (TextView) findViewById(R.id.textView1);              //+-×÷
         tv2 = (TextView) findViewById(R.id.textView2);      //関連づけ          //b
         tv3 = (TextView) findViewById(R.id.textView3);                 // =
-        tv4 = (TextView) findViewById(R.id.textView4);                  //c
+        tv4 = (TextView) findViewById(R.id.textView4);              //c
+        tv5 = (TextView) findViewById(R.id.textView5);          //メモリー欄
 
     }
 
@@ -249,7 +251,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void memoPlus(View view){
+            if( Eqeualend == true) {
+                valueToString = String.valueOf(result);         //result取得
+                tv5.setText(String.valueOf(valueToString));     //tv5に表示
 
+            }
+
+    }
+    public void memoMinus(View view){
+        tv5.setText("");
+        valueToString=null;     //nullにする。
     }
 
 }

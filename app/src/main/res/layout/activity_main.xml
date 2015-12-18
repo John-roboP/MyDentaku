@@ -67,6 +67,15 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_above="@+id/button9"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:textSize="30dp" />
+
     <Button
         android:onClick="button0"
         android:layout_width="wrap_content"
@@ -252,20 +261,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="M+"
-        android:id="@+id/button"
+        android:id="@+id/MemoPl"
         android:textSize="30dp"
-        android:layout_alignTop="@+id/button10"
-        android:layout_toRightOf="@+id/button10"
-        android:layout_toEndOf="@+id/button10" />
+        android:onClick="memoPlus"
+        android:layout_above="@+id/button8"
+        android:layout_alignLeft="@+id/button8"
+        android:layout_alignStart="@+id/button8" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="M-"
-        android:id="@+id/button10"
+        android:id="@+id/MemoMi"
         android:textSize="30dp"
         android:layout_above="@+id/button7"
         android:layout_toLeftOf="@+id/button8"
-        android:layout_toStartOf="@+id/button8" />
+        android:layout_toStartOf="@+id/button8"
+        android:onClick="memoMinus" />
 
 </RelativeLayout>
