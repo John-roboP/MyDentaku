@@ -176,11 +176,11 @@
         android:layout_height="wrap_content"
         android:text="9"
         android:id="@+id/button9"
-        android:layout_alignTop="@+id/button8"
-        android:layout_toRightOf="@+id/button5"
-        android:layout_toEndOf="@+id/button5"
         android:textSize="50dp"
-        android:onClick="button9" />
+        android:onClick="button9"
+        android:layout_alignTop="@+id/button8"
+        android:layout_toRightOf="@+id/button8"
+        android:layout_toEndOf="@+id/button8" />
 
     <Button
         android:layout_width="wrap_content"
@@ -247,5 +247,25 @@
         android:layout_alignParentStart="true"
         android:textSize="50dp"
         android:onClick="btCancel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M+"
+        android:id="@+id/button"
+        android:textSize="30dp"
+        android:layout_alignTop="@+id/button10"
+        android:layout_toRightOf="@+id/button10"
+        android:layout_toEndOf="@+id/button10" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M-"
+        android:id="@+id/button10"
+        android:textSize="30dp"
+        android:layout_above="@+id/button7"
+        android:layout_toLeftOf="@+id/button8"
+        android:layout_toStartOf="@+id/button8" />
 
 </RelativeLayout>

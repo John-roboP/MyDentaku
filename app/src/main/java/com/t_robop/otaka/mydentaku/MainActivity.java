@@ -248,6 +248,9 @@ public class MainActivity extends AppCompatActivity {
         tv4.setText("");
 
     }
+    public void memoPlus(View view){
+
+    }
 
 }
 
